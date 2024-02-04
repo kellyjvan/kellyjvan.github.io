@@ -17,7 +17,7 @@ constructor() {
                       <a href="membership.html" class="nav-link">Membership</a>
                   </li>
                   <li class="nav-item">
-                      <a href="#" class="nav-link">Profile</a>
+                      <a href="day_use.html" class="nav-link">Day Use</a>
                   </li>
                   <li class="nav-item dropdown">
                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
