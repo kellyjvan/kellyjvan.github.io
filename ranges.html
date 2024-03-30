@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shooting Ranges</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
+  <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="https://kit.fontawesome.com/905aec768d.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px;
+    margin-top: 0px;    
+  }
+  .gallery a:not(:first-child) {
+    display: none;
+  }
+  .gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+    
+  }
+  .gals {
+    text-align: center;
+    h3 {
+      margin: 25px;
+    }
+  }
+
+.gallery-navigation {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.gallery-navigation a {
+  display: inline-block;
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+}
+
+.gallery-navigation a:hover {
+  color: blue;
+}
+
+
+  li {
+    img {
+      height: 25px;
+    }
+  }
+  
+  .top {
+    margin: 25px;
+  }
+  .range-feature {
+    margin-bottom: 20px;
+  }
+  .range-feature h3 {
+    margin-bottom: 5px;
+  }
+  .range-feature ul {
+    list-style-type: disc;
+  }
+</style>
+
+<body>
+<header-component></header-component>
+<div class="container-fluid">  
+  <div class="row">
+    <div class="col-md-12 top">
+      <h2>Shooting Ranges</h2>
+      <p>The park offers a 50 yard pistol range,a 200 meter rifle range and a 600 yard rifle range.</p>
+      <div class="range-feature">
+        <br>
+        <h3>All ranges:</h3>
+        <ul>
+            <li>Are covered.</li>
+            <li>Have shooting stations and benches.</li>
+            <li>Have concrete floors.</li>
+            <li>Have gun racks.</li>
+            <li>Have target bases and stands.</li>
+            <li>Have wood stoves for winter shooting.</li>
+            <li>Have spectator benches.</li>
+            <li>Have yardage markers and berms.</li>
+        </ul>        
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="col-md-4 gals">
+        <h3>25 yard range</h3>
+        <div class="gallery">
+          <a href="/images/campingPad.JPG" target="_blank" data-caption="Camping"><img src="/images/camping.PNG" alt="Camping"></a>
+          <a href="/kellyjvan.github.io/images/ranges.PNG" target="_blank" data-caption="Flying"><img src="/kellyjvan.github.io/images/ranges.PNG" alt="Flying"></a>
+          <a href="/kellyjvan.github.io/images/riding.PNG" target="_blank" data-caption="Ranges"><img src="/kellyjvan.github.io/images/riding.PNG" alt="Ranges"></a>
+        </div>
+        <div class="gallery-navigation">
+          <a class="prev" href="#" onclick="prevImage()">❮</a>
+          <a class="next" href="#" onclick="nextImage()">❯</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 gals">
+      <h3>200 meter range</h3>
+      <div class="gallery">
+        <a href="/images/flying.PNG" data-caption="Camping"><img src="/images/flying.PNG" alt="Camping"></a>
+        <a href="/images/flying.PNG" data-caption="Flying"><img src="/images/flying.PNG" alt="Flying"></a>
+        <a href="/images/ranges.PNG" data-caption="Ranges"><img src="/images/ranges.PNG" alt="Ranges"></a>
+      </div>
+    </div>
+    <div class="col-md-4 gals">
+      <h3>600 meter range</h3>
+      <div class="gallery">
+        <a href="/images/ranges.PNG" data-caption="Camping"><img src=/images/ranges.PNG" alt="Camping"></a>
+        <a href="/images/flying.PNG" data-caption="Flying"><img src="/images/flying.PNG" alt="Flying"></a>
+        <a href="/images/ranges.PNG" data-caption="Ranges"><img src="/images/ranges.PNG" alt="Ranges"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.js"></script>
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    baguetteBox.run('.gallery');
+  });
+</script>
+<script>
+  var currentIndex = 0;
+  var images = document.querySelectorAll('.gallery a');
+
+  function nextImage() {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = images.length - 1;
+    }
+    showImage(currentIndex);
+  }
+
+  function showImage(index) {
+    for (var i = 0; i < images.length; i++) {
+      images[i].style.display = 'none';
+    }
+    images[index].style.display = 'block';
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const galleries = document.querySelectorAll('.gallery');
+
+    galleries.forEach(function(gallery) {
+      const images = gallery.querySelectorAll('img');
+      const prevButtons = gallery.querySelectorAll('.prev');
+      const nextButtons = gallery.querySelectorAll('.next');
+      let currentIndex = 0;
+
+      // Show the first image initially
+      images[currentIndex].style.display = 'block';
+
+      // Function to show the previous image
+      function showPrev() {
+        images[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        images[currentIndex].style.display = 'block';
+      }
+
+      // Function to show the next image
+      function showNext() {
+        images[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].style.display = 'block';
+      }
+
+      // Add click event listeners to previous and next buttons
+      prevButtons.forEach(function(button) {
+        button.addEventListener('click', showPrev);
+      });
+
+      nextButtons.forEach(function(button) {
+        button.addEventListener('click', showNext);
+      });
+    });
+  });
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

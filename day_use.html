@@ -5,56 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="components/header.js" type="text/javascript" defer></script>
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 
-  <title>Your Park Page</title>
+<style>
+  .day-use {    
+    margin-top: 25px;
+    margin: 20px;
+  }
+ 
+  .day-use-prices {
+    margin: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 35px;
+    height: 350px;
+  }
+  .camping {
+    padding:35px;    
+    margin-top: 25px;
+    border-radius: 10px;
+    height: 350px;
+  }
+  .park-rules {
+    margin: 20px;
+    margin-top: 25px;
+    
+  }
+  .full-logo {
+    border-radius: 50%; /* Makes the image appear as a circle */
+      width: 300px; /* Adjust width as needed */
+      height: 300px; /* Adjust height as needed */
+      object-fit: cover; /* Ensures the image covers the entire container */
+      align-items: center;    
+  }
+  .mobile-logo {
+      border-radius: 50%; /* Makes the image appear as a circle */
+      width: 300px; /* Adjust width as needed */
+      height: 300px; /* Adjust height as needed */
+      object-fit: cover; /* Ensures the image covers the entire container */
+      align-items: center;    
+    }
+    .logo-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+  
+      }
+    
+
+  table {
+    padding: 10px;
+  }
+  .rules-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rules-list li {
+  margin-bottom: 10px;
+}
+.day-image {
+  background-image: url('/images/flying.PNG');
+}
+
+
+
+</style>
+  <title>Day Use</title>
 </head>
 <body>
-    <header-component></header-component>
-
-<div class="container mt-5">
-  <!-- Additional Box -->
-  <div class="row mt-4 mb-4">
-    <div class="col-md-12">
-      <div class="alert alert-secondary" role="alert">
-        <h5 class="alert-heading">Additional Information</h5>
-        <p>This is some additional information that goes on top of the Park Rules and Prices boxes.</p>
-      </div>
+<header-component></header-component>
+<div class="container-fluid">
+  <div class="container d-sm-none logo-circle">
+    <img src="/images/ksplogo.PNG" class="mobile-logo">
+  </div>
+  <div class="row row-1">
+    <div class="col-md-5 day-use">
+      <h2>Day Use</h2>    
+      <p>Non members are welcome to use the park for a daily fee. See the charts below for day use pricing.</p>
+      <p>The park is located on Highway 66 about 8 miles west of Keno, Oregon.</p>
+      <h2>Park Rules</h2>
+      <ul class="rules-list">
+        <li>All guests must check in at the park host kiosk before engaging in park activities.</li>
+        <li>15 MPH speed limit on all roads.</li>
+        <li>Fires are only allowed in fire rings.</li>
+        <li>Please, no pets at the park.</li>
+      </ul>
+    </div>
+    <div class="col-md-4 logo-circle d-none d-sm-none d-md-block text-center">
+      <img src="/images/ksplogo.PNG" class="full-logo">
     </div>
   </div>
 
-  <!-- Park Rules and Prices Boxes -->
-  <div class="row mb-4">
-    <!-- Park Rules Box -->
-    <div class="col-md-6">
-      <div class="alert alert-warning" role="alert">
-        <h5 class="alert-heading">Park Rules</h5>
-        <ul class="list-unstyled">
-          <li>No littering</li>
-          <li>Keep pets on a leash</li>
-          <li>Respect nature</li>
-          <!-- Add more rules as needed -->
-        </ul>
-      </div>
+  
+  <div class="row row-2">
+    <div class="col-md-5 camping">
+      <h4>Camping</h4>
+      <p><i>Prices as of June 1, 2023</i></p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Per night, per camp</td>
+            <td>$10</td>
+          </tr>
+          <tr>            
+          </tr>
+          
+        </tbody>
+      </table>
+      <h5>Camping Rules:</h5>
+      <p>- 10 day limit.</p>
+      <p>- Fires in fire ringly ONLY.</p>
+      <p>- Camp only in designated areas.</p>
+      
+      </h5>
     </div>
-
-    <!-- Prices Box -->
-    <div class="col-md-6">
-      <div class="alert alert-primary" role="alert">
-        <h5 class="alert-heading">Prices</h5>
-        <p class="mb-0">Adults: $10</p>
-        <p class="mb-0">Children (under 12): $5</p>
-        <!-- Add more pricing details as needed -->
-      </div>
+    <div class="col-md-5 day-use-prices">
+      <h4>Use the facilities for a day</h4>
+      <p><i>Prices as of June 1, 2023</i></p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>ADULTS (18 years and older)</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td>Veterans / Active Military</td>
+            <td>$8</td>
+          </tr>
+          <tr>
+            <td>KIDS (6 to 17 years)</td>
+            <td>$5</td>
+          </tr>
+          <tr>
+            <td>UNDER 6 YEARS</td>
+            <td>Free</td>
+          </tr>
+        </tbody>
+      </table>      
     </div>
   </div>
 </div>
+
 
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
